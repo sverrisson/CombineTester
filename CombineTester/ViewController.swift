@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         slider.publisher()
             .debounce(for: 0.1, scheduler: RunLoop.current)
             .sink { (slider) in
-            print("Slider value: \(slider.value)")
+                print("Slider value: \(slider.value)")
         }.store(in: &subscriptions)
         
         stepper.publisher().sink { (stepper) in
@@ -54,5 +54,10 @@ class ViewController: UIViewController {
         
         pickerView.dataSource = pickerSource
         pickerView.delegate = pickerSource
+        pickerSource.$selected
+            .removeDuplicates()
+            .sink { (pickerData) in
+                print("Picker selected: \(pickerData)")
+        }.store(in: &subscriptions)
     }
 }
