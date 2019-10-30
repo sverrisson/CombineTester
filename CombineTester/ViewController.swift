@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import UICombine
 
 class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
