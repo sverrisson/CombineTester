@@ -124,6 +124,8 @@
 			dependencies = (
 			);
 			name = CombineTester;
+			packageProductDependencies = (
+			);
 			productName = CombineTester;
 			productReference = 92228C0423625CFF0040E1AF /* CombineTester.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +176,8 @@
 				Base,
 			);
 			mainGroup = 92228BFB23625CFF0040E1AF;
+			packageReferences = (
+			);
 			productRefGroup = 92228C0523625CFF0040E1AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

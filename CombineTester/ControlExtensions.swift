@@ -45,3 +45,9 @@ extension CombineCompatible where Self: UIStepper {
         ControlPublisher(control: self, events: .primaryActionTriggered)
     }
 }
+
+//extension CombineCompatible where Self: UIBarButtonItem {
+//    func publisher() -> ControlPublisher<UIBarButtonItem> {
+//        ControlPublisher(control: self, events: .primaryActionTriggered)
+//    }
+//}
