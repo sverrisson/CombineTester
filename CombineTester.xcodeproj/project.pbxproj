@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,8 @@
 		92228C1123625D000040E1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92228C1023625D000040E1AF /* Assets.xcassets */; };
 		92228C1423625D000040E1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92228C1223625D000040E1AF /* LaunchScreen.storyboard */; };
 		92228C1F23625D000040E1AF /* CombineTesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92228C1E23625D000040E1AF /* CombineTesterTests.swift */; };
-		9287258B23661F6D00EA8375 /* ControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287258A23661F6D00EA8375 /* ControlExtensions.swift */; };
 		9287258D2366292100EA8375 /* PickerDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287258C2366292100EA8375 /* PickerDatasource.swift */; };
-		92CFDEE82363E424009079B6 /* ControlPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CFDEE72363E424009079B6 /* ControlPublisher.swift */; };
+		92B7213D236A533700C29A21 /* UICombine in Frameworks */ = {isa = PBXBuildFile; productRef = 92B7213C236A533700C29A21 /* UICombine */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +40,8 @@
 		92228C1A23625D000040E1AF /* CombineTesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineTesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92228C1E23625D000040E1AF /* CombineTesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTesterTests.swift; sourceTree = "<group>"; };
 		92228C2023625D000040E1AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9287258A23661F6D00EA8375 /* ControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlExtensions.swift; sourceTree = "<group>"; };
 		9287258C2366292100EA8375 /* PickerDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDatasource.swift; sourceTree = "<group>"; };
-		92CFDEE72363E424009079B6 /* ControlPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPublisher.swift; sourceTree = "<group>"; };
+		92B7213A236A532400C29A21 /* UICombine */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UICombine; path = ../UICombine; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B7213D236A533700C29A21 /* UICombine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,9 +66,11 @@
 		92228BFB23625CFF0040E1AF = {
 			isa = PBXGroup;
 			children = (
+				92B7213A236A532400C29A21 /* UICombine */,
 				92228C0623625CFF0040E1AF /* CombineTester */,
 				92228C1D23625D000040E1AF /* CombineTesterTests */,
 				92228C0523625CFF0040E1AF /* Products */,
+				92B7213B236A533700C29A21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,8 +88,6 @@
 			children = (
 				92228C0723625CFF0040E1AF /* AppDelegate.swift */,
 				92228C0923625CFF0040E1AF /* SceneDelegate.swift */,
-				92CFDEE72363E424009079B6 /* ControlPublisher.swift */,
-				9287258A23661F6D00EA8375 /* ControlExtensions.swift */,
 				92228C0B23625CFF0040E1AF /* ViewController.swift */,
 				9287258C2366292100EA8375 /* PickerDatasource.swift */,
 				92228C0D23625CFF0040E1AF /* Main.storyboard */,
@@ -108,6 +107,13 @@
 			path = CombineTesterTests;
 			sourceTree = "<group>";
 		};
+		92B7213B236A533700C29A21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,6 +131,7 @@
 			);
 			name = CombineTester;
 			packageProductDependencies = (
+				92B7213C236A533700C29A21 /* UICombine */,
 			);
 			productName = CombineTester;
 			productReference = 92228C0423625CFF0040E1AF /* CombineTester.app */;
@@ -213,10 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CFDEE82363E424009079B6 /* ControlPublisher.swift in Sources */,
 				92228C0C23625CFF0040E1AF /* ViewController.swift in Sources */,
 				92228C0823625CFF0040E1AF /* AppDelegate.swift in Sources */,
-				9287258B23661F6D00EA8375 /* ControlExtensions.swift in Sources */,
 				9287258D2366292100EA8375 /* PickerDatasource.swift in Sources */,
 				92228C0A23625CFF0040E1AF /* SceneDelegate.swift in Sources */,
 			);
@@ -485,6 +490,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		92B7213C236A533700C29A21 /* UICombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UICombine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 92228BFC23625CFF0040E1AF /* Project object */;
 }
