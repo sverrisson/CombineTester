@@ -23,11 +23,6 @@ final class ControlSubscription<SubscriberType: Subscriber, Control: UIControl>:
         control.addTarget(self, action: #selector(eventHandler), for: event)
     }
 
-    func request(_ demand: Subscribers.Demand) {
-        // We do nothing here as we only want to send events when they occur.
-        // See, for more info: https://developer.apple.com/documentation/combine/subscribers/demand
-    }
-
     func cancel() {
         subscriber = nil
     }
@@ -35,11 +30,14 @@ final class ControlSubscription<SubscriberType: Subscriber, Control: UIControl>:
     @objc private func eventHandler() {
         _ = subscriber?.receive(control)
     }
+    
+    func request(_ demand: Subscribers.Demand) {
+        print("Demand is: \(demand) from \(demand.hashValue)")
+    }
 }
 
 /// A custom `Publisher` to work with our custom `UIControlSubscription`.
 struct ControlPublisher<Control: UIControl>: Publisher {
-
     typealias Output = Control
     typealias Failure = Never
 

@@ -25,33 +25,40 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Test interaction
+        print("Button")
         button.publisher().sink { (button) in
             print("Button tapped: \(button.titleLabel?.text ?? "")")
         }.store(in: &subscriptions)
         
+        print("Switch")
         toggle.publisher().sink { (toggle) in
             print("Switch set: \(toggle.isOn)")
         }.store(in: &subscriptions)
         
+        print("SegmentedControl")
         segmentedControl.publisher().sink { (segment) in
             print("SegmentedControl selected: \(segment.titleForSegment(at: segment.selectedSegmentIndex) ?? "")")
         }.store(in: &subscriptions)
         
+        print("TextField")
         textField.publisher().sink { (textField) in
             print("TextField text: \(textField.text ?? "")")
             textField.resignFirstResponder()
         }.store(in: &subscriptions)
         
+        print("Slider")
         slider.publisher()
             .debounce(for: 0.1, scheduler: RunLoop.current)
             .sink { (slider) in
                 print("Slider value: \(slider.value)")
         }.store(in: &subscriptions)
         
+        print("Stepper")
         stepper.publisher().sink { (stepper) in
             print("Stepper value: \(stepper.value)")
         }.store(in: &subscriptions)
         
+        print("PickerView")
         pickerView.dataSource = pickerSource
         pickerView.delegate = pickerSource
         pickerSource.$selected
@@ -60,6 +67,7 @@ class ViewController: UIViewController {
                 print("Picker selected: \(pickerData)")
         }.store(in: &subscriptions)
         
+        print("Testing")
         Just("Testing")
             .merge(with:
                button.publisher().map{ "Button: \($0.titleLabel?.text ?? "")" },
@@ -76,8 +84,5 @@ class ViewController: UIViewController {
             .sink { (string) in
                 print(string)
         }.store(in: &subscriptions)
-        
-        pickerView.dataSource = pickerSource
-        pickerView.delegate = pickerSource
     }
 }
