@@ -33,20 +33,25 @@
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nrz-Pw-nxm">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nrz-Pw-nxm">
                                 <rect key="frame" x="36" y="323" width="342" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="70f-Lb-5UV">
-                                <rect key="frame" x="34" y="393" width="346" height="31"/>
+                                <rect key="frame" x="34" y="463" width="346" height="31"/>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="MpR-TT-xaQ">
-                                <rect key="frame" x="36" y="459" width="342" height="32"/>
+                                <rect key="frame" x="36" y="529" width="342" height="32"/>
                             </stepper>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-Fh-0h1">
-                                <rect key="frame" x="36" y="527" width="342" height="216"/>
+                                <rect key="frame" x="36" y="597" width="342" height="216"/>
                             </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="I" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jze-lr-g6R">
+                                <rect key="frame" x="36" y="393" width="342" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -57,13 +62,16 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mpF-hL-i4Q" secondAttribute="trailing" constant="32" id="9Sn-m0-uNE"/>
                             <constraint firstItem="nrz-Pw-nxm" firstAttribute="top" secondItem="5g2-Sx-rfp" secondAttribute="bottom" constant="36" id="BaR-pV-dKb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="70f-Lb-5UV" secondAttribute="trailing" constant="36" id="CGq-5R-aQJ"/>
+                            <constraint firstItem="jze-lr-g6R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="GQp-bM-mS2"/>
+                            <constraint firstItem="jze-lr-g6R" firstAttribute="top" secondItem="nrz-Pw-nxm" secondAttribute="bottom" constant="36" id="IB2-Sz-bmA"/>
                             <constraint firstItem="5g2-Sx-rfp" firstAttribute="top" secondItem="ObI-lv-6r8" secondAttribute="bottom" constant="36" id="LDN-Il-hKb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jze-lr-g6R" secondAttribute="trailing" constant="36" id="PhI-7O-Wda"/>
                             <constraint firstItem="mpF-hL-i4Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="QYL-h2-gPe"/>
                             <constraint firstItem="5g2-Sx-rfp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="V2M-XV-LEV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MpR-TT-xaQ" secondAttribute="trailing" constant="36" id="bTg-kg-xsc"/>
-                            <constraint firstItem="70f-Lb-5UV" firstAttribute="top" secondItem="nrz-Pw-nxm" secondAttribute="bottom" constant="36" id="bmf-E3-dEa"/>
                             <constraint firstItem="nrz-Pw-nxm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="fIe-S1-OpP"/>
                             <constraint firstItem="5gK-Fh-0h1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="fRo-aQ-ctH"/>
+                            <constraint firstItem="70f-Lb-5UV" firstAttribute="top" secondItem="jze-lr-g6R" secondAttribute="bottom" constant="36" id="fsP-A1-D9h"/>
                             <constraint firstItem="5gK-Fh-0h1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-36" id="hbx-rD-NHM"/>
                             <constraint firstItem="MpR-TT-xaQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="mqO-DG-Klf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nrz-Pw-nxm" secondAttribute="trailing" constant="36" id="oah-IQ-VtL"/>
@@ -74,11 +82,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="fHJ-75-ZrV">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="trash" id="hnb-5N-5P3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="hnb-5N-5P3"/>
                     </navigationItem>
                     <connections>
                         <outlet property="barButton" destination="hnb-5N-5P3" id="cJY-2P-ebu"/>
                         <outlet property="button" destination="mpF-hL-i4Q" id="K8s-33-w7Z"/>
+                        <outlet property="passwordField" destination="jze-lr-g6R" id="j8K-2S-ciq"/>
                         <outlet property="pickerView" destination="5gK-Fh-0h1" id="EWR-vr-Swh"/>
                         <outlet property="segmentedControl" destination="5g2-Sx-rfp" id="R7u-e2-HI6"/>
                         <outlet property="slider" destination="70f-Lb-5UV" id="amV-dz-eOc"/>
@@ -110,4 +119,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="I" width="16" height="16"/>
+    </resources>
 </document>

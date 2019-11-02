@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var toggle: UISwitch!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -25,6 +26,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "CombineTester"
+        
+        let stringPublisher = ["hello", "world"].publisher
+        stringPublisher
+            .delay(for: 0.0, scheduler: RunLoop.main)
+            .map{$0.capitalized}
+            .sink(receiveCompletion: { (completion) in
+                print("Stringpublisher Completion: \(completion)")
+            }) { (string) in
+                print("Stringpublisher: \(string)")
+        }.store(in: &subscriptions)
+        
+        print("Barbutton")
+        barButton.publisher()
+            .sink{ (item) in
+                print("Barbutton tapped: \(item)")
+        }.store(in: &subscriptions)
         
         // Test interaction
         print("Button")
@@ -48,6 +66,30 @@ class ViewController: UIViewController {
         textField.publisher().sink { (textField) in
             print("TextField text: \(textField.text ?? "")")
             textField.resignFirstResponder()
+        }.store(in: &subscriptions)
+        
+        textField.keyboardDidShow()
+            .sink { (notification) in
+            print("TextField Keyboard did appear: \(notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] ?? "")")
+        }.store(in: &subscriptions)
+        
+        textField.keyboardWillHide().sink { (notification) in
+            print("TextField Keyboard did hide: \(notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] ?? "")")
+        }.store(in: &subscriptions)
+        
+        print("PasswordField")
+        passwordField.publisher().sink { (textField) in
+            print("Password Keyboard text: \(textField.text ?? "")")
+            textField.resignFirstResponder()
+        }.store(in: &subscriptions)
+        
+        passwordField.keyboardDidShow()
+            .sink { (notification) in
+            print("Password Keyboard did appear: \(notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] ?? "")")
+        }.store(in: &subscriptions)
+        
+        passwordField.keyboardWillHide().sink { (notification) in
+            print("Password Keyboard did hide: \(notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] ?? "")")
         }.store(in: &subscriptions)
         
         print("Slider")
