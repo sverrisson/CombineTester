@@ -11,6 +11,7 @@ import Combine
 import UICombine
 
 class ViewController: UIViewController {
+    @IBOutlet weak var barButton: UIBarButtonItem!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var toggle: UISwitch!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -27,7 +28,9 @@ class ViewController: UIViewController {
         
         // Test interaction
         print("Button")
-        button.publisher().sink { (button) in
+        button.publisher()
+            .print("B")
+            .sink { (button) in
             print("Button tapped: \(button.titleLabel?.text ?? "")")
         }.store(in: &subscriptions)
         
