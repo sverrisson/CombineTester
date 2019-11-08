@@ -93,8 +93,7 @@ class ViewController: UIViewController {
         }.store(in: &subscriptions)
         
         slider.publisher()
-            .debounce(for: .milliseconds(8), scheduler: RunLoop.current)
-            .removeDuplicates()
+            .debounce(for: .milliseconds(28), scheduler: RunLoop.current)
             .sink { (slider) in
                 print("Slider value: \(slider.value)")
         }.store(in: &subscriptions)
