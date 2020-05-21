@@ -59,9 +59,9 @@ class ViewController: UIViewController {
             }
         }.store(in: &subscriptions)
         
-        segmentedPublisher = segmentedControl.publisher().sink { (segment) in
+        segmentedControl.publisher().sink { (segment) in
             print("SegmentedControl selected: \(segment.titleForSegment(at: segment.selectedSegmentIndex) ?? "")")
-        }
+        }.store(in: &subscriptions)
         
         textField.publisher()
             .sink { (textField) in
